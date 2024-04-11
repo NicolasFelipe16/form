@@ -19,11 +19,7 @@
         <div style="--duration: 3.1s; --left: 85%" class="effects__item"></div>
         <div style="--duration: 4.1s; --left: 95%" class="effects__item"></div>
     </div>
-
-    <form class="form">
-        <h1>Dados enviados com sucesso!</h1>
-    </form>
-
+    
     <?php
 
     $connection = mysqli_connect("localhost", "root", "Nicolas.1606", "cadastros");
@@ -45,6 +41,10 @@
     VALUES ('$firstname', '$lastname', '$birthdate', '$gender', '$email', '$telephone');";
     mysqli_query($connection, $sql);
     ?>
+
+    <form class="form">
+        <h1>Dados enviados com sucesso!</h1>
+    </form>
 
 </body>
 </html>
