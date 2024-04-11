@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>MyForm</title>
+</head>
+
+<body>
+    <div class="banner__effects">
+        <div style="--duration: 4.2s; --left: 05%" class="effects__item"></div>
+        <div style="--duration: 4.0s; --left: 15%" class="effects__item"></div>
+        <div style="--duration: 4.7s; --left: 25%" class="effects__item"></div>
+        <div style="--duration: 3.2s; --left: 35%" class="effects__item"></div>
+        <div style="--duration: 3.0s; --left: 45%" class="effects__item"></div>
+        <div style="--duration: 3.5s; --left: 55%" class="effects__item"></div>
+        <div style="--duration: 5.0s; --left: 65%" class="effects__item"></div>
+        <div style="--duration: 4.3s; --left: 75%" class="effects__item"></div>
+        <div style="--duration: 3.1s; --left: 85%" class="effects__item"></div>
+        <div style="--duration: 4.1s; --left: 95%" class="effects__item"></div>
+    </div>
+
+    <form action="api/config.php" method="POST" class="form" autocomplete="off">
+        <h2>Register</h2>
+        <fieldset class="fieldset">
+            <div class="field">
+                <input type="text" name="firstname" id="inputfirstname" required placeholder="Ex: João Silva" autofocus>
+                <label for="firstname" id="labelfirstname">first name</label>
+            </div>
+            <div class="field">
+                <input type="text" name="lastname" id="inputlastname" required placeholder=".">
+                <label for="lastname" id="labellastname">last name</label>
+            </div>
+        </fieldset>
+        <fieldset class="fieldset">
+            <div class="field">
+                <input type="date" name="birthdate" id="inputbirthdate" required>
+                <label for="birthdate" id="labelbirthdate">birth date</label>
+            </div>
+            <div class="field">
+                <div id="gender">
+                    <input type="radio" value="male" name="gender" id="inputgendermale" onclick="radioselected()"
+                        required>
+                    <label for="inputgendermale" id="labelgendermale">male</label>
+                    <input type="radio" value="female" name="gender" id="inputgenderfemale" onclick="radioselected()"
+                        required>
+                    <label for="inputgenderfemale" id="labelgenderfemale">female</label>
+                </div>
+                <label id="labelgender">Gender</label>
+            </div>
+        </fieldset>
+        <fieldset class="fieldset">
+            <div class="field">
+                <input type="email" name="email" id="inputemail" required placeholder=".">
+                <label for="labelemail">e-mail</label>
+            </div>
+            <div class="field">
+                <input type="tel" name="tel" id="inputtel" minlength="11" maxlength="11"
+                    title="Digite somente números e inclua o DDD" required placeholder=".">
+                <label for="labeltel">telephone</label>
+            </div>
+        </fieldset>
+        <input type="submit" name="submit" value="submit" required placeholder=".">
+    </form>
+
+    <script>
+        function radioselected() {
+            document.getElementById("gender").style.border = "1px solid var(--color-06)";
+            document.getElementById("labelgender").style.color = "var(--color-06)";
+        }
+    </script>
+</body>
+
+</html>
